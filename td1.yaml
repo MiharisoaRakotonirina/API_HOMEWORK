@@ -1,0 +1,28 @@
+openapi: 3.0.0
+info:
+  title: API pour les clientscs
+  version: 1.0.0
+
+paths:
+  /customers:
+    get:
+      summary: Obtenir la liste des clients
+      responses:
+        '200':
+          description: Liste des clients
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+
+components:
+  schemas:
+    Customer:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        age:
+          type: integer
