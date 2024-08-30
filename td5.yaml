@@ -1,0 +1,25 @@
+paths:
+  /customers/{customerId}:
+    put:
+      summary: Mettre à jour intégralement un client
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        '200':
+          description: Client mis à jour
+
+    patch:
+      summary: Mettre à jour partiellement un client
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        '200':
+          description: Client mis à jour partiellement
