@@ -1,0 +1,58 @@
+paths:
+  /customers:
+    get:
+      summary: Obtenir une page contenant les clients 
+      parameters:
+        - in: query
+          name: page
+          required: true
+          schema:
+            type: integer
+        - in: query
+          name: pageSize
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Succès
+
+    post:
+      summary: Créer des clients
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Customer'
+      responses:
+        '201':
+          description: Clients créés
+
+    put:
+      summary: Modifier un client existant
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        '200':
+          description: Client modifié
+
+    delete:
+      summary: Supprimer des clients
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+      responses:
+        '200':
+          description: Clients supprimés
