@@ -1,9 +1,7 @@
 openapi: 3.0.0
 info:
-  name: STD23012-TD1
+  title: STD23012-TD1
   version: 1.0.0
-server :
-  url: http://localhost.std23012.com
 paths:
   /customers:
     get:
